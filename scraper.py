@@ -69,22 +69,6 @@ def evaluateSentiments(reviews):
     neg_review_count = 0
     neutral_review_count = 0
 
-# Evaluates the sentiment of reviews using polarity scores
-# A book's title/topic tends to throw off the polarity scores
-# (e.g. Book Thief. "thief" and "death" have strong negative scores and keep
-# cropping up in the reviews, which cause the reviews to seem more negative than they are).
-# Same thing with fantasy novels. Reviews tend to use dramatic language that
-# inflates the polarity scores.
-
-# To Do List:
-# 1. Filter out title and topic words so they stop influencing polarity scores
-#   a. How to find out topic? Maybe scrape the book summary, word frequency distributions...
-# 2. Implementing some kind of "curve" for genres. Do certain genres tend to have higher
-#   or lower scores (e.g. fantasy tends high, maybe nonfiction would tend low?)
-#   a. How to extract genre from a book summary or reviews?
-# 3. Keep pruning - when you think you're close, scrape star ratings and check against them.
-#    Positive = 4-5 stars, Neutral = 3 stars, Negative = 1-2 stars
-
     for review in reviews:
         pos_count = 0
         neg_count = 0
